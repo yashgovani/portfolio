@@ -1,10 +1,10 @@
 'use client';
 
+import ParticleBackground from '@/components/ParticleBackground';
 import { motion } from 'framer-motion';
+import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { TypeAnimation } from 'react-type-animation';
-import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
-import ParticleBackground from '@/components/ParticleBackground';
 
 export default function HeroSection() {
   const containerVariants = {
@@ -24,13 +24,13 @@ export default function HeroSection() {
   };
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
+    { icon: Github, href: 'https://github.com/yashgovani', label: 'GitHub' },
     { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' },
+    { icon: Mail, href: 'mailto:yash.govani1310@gmail.com', label: 'Email' },
   ];
 
   return (
-    <section className='relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900'>
+    <section className='relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-blue-50 to-indigo-100 dark:from-background dark:via-blue-900 dark:to-indigo-900'>
       {/* Particle Background */}
       <ParticleBackground />
 
@@ -90,7 +90,7 @@ export default function HeroSection() {
             >
               <div className='relative'>
                 <div className='w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl'>
-                  <span className='text-3xl font-bold text-white'>👨‍💻</span>
+                  <span className='text-3xl font-bold text-primary-foreground'>👨‍💻</span>
                 </div>
                 <div className='absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full blur-xl opacity-50 animate-pulse'></div>
               </div>
@@ -98,17 +98,15 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h1 className='text-5xl md:text-7xl font-bold mb-6 text-gray-900 dark:text-white'>
-              Hi, I&apos;m a{' '}
+            <h1 className='text-5xl md:text-7xl font-bold mb-6 text-foreground'>
+              Hi, I&apos;m{' '}
               <span className='bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent'>
-                Frontend
+                Yash Govani
               </span>
               <br />
               <TypeAnimation
                 sequence={[
-                  'Developer',
-                  2000,
-                  'React Expert',
+                  'Full Stack Developer',
                   2000,
                   'UI/UX Enthusiast',
                   2000,
@@ -125,12 +123,12 @@ export default function HeroSection() {
 
           <motion.div variants={itemVariants}>
             <p className='text-xl md:text-2xl mb-8 text-blue-700 dark:text-blue-300 font-medium'>
-              React • Next.js • TypeScript • Modern Web Technologies
+              React • Vue.js • Next.js • TypeScript • Modern Web Technologies
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <p className='text-lg mb-12 max-w-3xl mx-auto text-gray-700 dark:text-gray-300 leading-relaxed'>
+            <p className='text-lg mb-12 max-w-3xl mx-auto text-muted-foreground leading-relaxed'>
               Crafting beautiful, interactive, and user-friendly web experiences
               with modern technologies. Passionate about clean code, innovative
               design, and creating digital solutions that make a difference.
@@ -162,7 +160,7 @@ export default function HeroSection() {
             >
               <Link
                 href='/contact'
-                className='group px-8 py-4 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-all duration-300 inline-flex items-center space-x-2'
+                className='group px-8 py-4 border-2 border-primary text-primary rounded-xl font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300 inline-flex items-center space-x-2'
               >
                 <span>Let&apos;s Connect</span>
                 <motion.div className='group-hover:scale-110 transition-transform'>
@@ -183,7 +181,7 @@ export default function HeroSection() {
                 href={social.href}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300'
+                className='p-3 bg-background rounded-full shadow-lg hover:shadow-xl text-muted-foreground hover:text-primary transition-all duration-300'
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -210,7 +208,7 @@ export default function HeroSection() {
             ].map((tech, index) => (
               <motion.div
                 key={tech}
-                className='px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-400 transition-all duration-300'
+                className='px-4 py-2 bg-background/80 backdrop-blur-sm rounded-full text-sm font-medium text-muted-foreground border border-border hover:border-primary transition-all duration-300'
                 whileHover={{ scale: 1.05, y: -1 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -227,7 +225,7 @@ export default function HeroSection() {
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           >
-            <ArrowDown className='w-6 h-6 text-gray-400 dark:text-gray-500' />
+            <ArrowDown className='w-6 h-6 text-muted-foreground' />
           </motion.div>
         </motion.div>
       </div>

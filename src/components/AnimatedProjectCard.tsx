@@ -32,15 +32,15 @@ export default function AnimatedProjectCard({
         delay: index * 0.1,
         ease: 'easeOut',
       }}
-      className='group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 dark:border-gray-700'
+      className='group relative bg-card rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-border'
     >
       {/* Project Image/Gradient */}
       <div className='relative overflow-hidden'>
         {imageUrl ? (
-          <div className='h-48 w-full bg-gray-200 dark:bg-gray-700 relative overflow-hidden'>
+          <div className='h-48 w-full bg-secondary relative overflow-hidden'>
             <div className='absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20 group-hover:from-blue-500/30 group-hover:to-purple-600/30 transition-all duration-300' />
             <div className='absolute inset-0 flex items-center justify-center'>
-              <span className='text-gray-500 dark:text-gray-400 text-sm'>
+              <span className='text-muted-foreground text-sm'>
                 Project Image
               </span>
             </div>
@@ -130,14 +130,14 @@ export default function AnimatedProjectCard({
       {/* Content */}
       <div className='p-6'>
         <motion.h3
-          className='text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'
+          className='text-xl font-bold text-foreground mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors'
           layoutId={`title-${index}`}
         >
           {title}
         </motion.h3>
 
         <motion.p
-          className='text-gray-600 dark:text-gray-300 mb-4 leading-relaxed text-sm'
+          className='text-muted-foreground mb-4 leading-relaxed text-sm'
           layoutId={`description-${index}`}
         >
           {description}
@@ -166,7 +166,7 @@ export default function AnimatedProjectCard({
               href={githubUrl}
               target='_blank'
               rel='noopener noreferrer'
-              className='flex-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-2 px-4 rounded-lg text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors flex items-center justify-center space-x-2'
+              className='flex-1 bg-secondary text-secondary-foreground py-2 px-4 rounded-lg text-sm font-medium hover:bg-secondary/80 transition-colors flex items-center justify-center space-x-2'
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

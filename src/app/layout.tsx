@@ -27,9 +27,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang='en' suppressHydrationWarning className="h-full">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const theme = localStorage.getItem('theme') || 
+                  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.classList.add(theme);
+                document.body.classList.add(theme);
+                document.documentElement.setAttribute('data-theme', theme);
+              } catch (e) {
+                // Fallback to light theme if something goes wrong
+                document.documentElement.classList.add('light');
+                document.body.classList.add('light');
+                document.documentElement.setAttribute('data-theme', 'light');
+              }
+            `,
+          }}
+        />
+      </head>
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-white dark:bg-gray-900 transition-colors duration-300`}
+        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased h-full bg-background text-foreground transition-colors duration-300`}
       >
         <ThemeProvider>
           <Header />

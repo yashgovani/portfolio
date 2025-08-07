@@ -18,7 +18,7 @@ export default function ProjectCard({
   imageUrl,
 }: ProjectCardProps) {
   return (
-    <div className='bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 card-hover'>
+    <div className='bg-background rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 card-hover border border-border'>
       {imageUrl ? (
         <Image
           src={imageUrl}
@@ -28,19 +28,19 @@ export default function ProjectCard({
           className='h-48 w-full object-cover'
         />
       ) : (
-        <div className='h-48 bg-gradient-to-r from-gray-900 to-black dark:from-gray-100 dark:to-white flex items-center justify-center'>
-          <span className='text-white dark:text-black text-lg font-semibold'>
+        <div className='h-48 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center'>
+          <span className='text-primary-foreground text-lg font-semibold'>
             {title}
           </span>
         </div>
       )}
 
       <div className='p-6'>
-        <h3 className='text-xl font-semibold text-gray-900 dark:text-white mb-2 hover:text-gray-700 dark:hover:text-gray-300 transition-colors'>
+        <h3 className='text-xl font-semibold text-foreground mb-2 hover:text-muted-foreground transition-colors'>
           {title}
         </h3>
 
-        <p className='text-gray-600 dark:text-gray-300 mb-4 line-clamp-3'>
+        <p className='text-muted-foreground mb-4 line-clamp-3'>
           {description}
         </p>
 
@@ -48,7 +48,7 @@ export default function ProjectCard({
           {technologies.map((tech, index) => (
             <span
               key={index}
-              className='px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors'
+              className='px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full hover:bg-accent transition-colors'
             >
               {tech}
             </span>
@@ -61,7 +61,7 @@ export default function ProjectCard({
               href={githubUrl}
               target='_blank'
               rel='noopener noreferrer'
-              className='flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-200 transform hover:scale-105'
+              className='flex items-center text-muted-foreground hover:text-foreground transition-all duration-200 transform hover:scale-105'
             >
               <svg
                 className='h-5 w-5 mr-2'
@@ -79,7 +79,7 @@ export default function ProjectCard({
               href={liveUrl}
               target='_blank'
               rel='noopener noreferrer'
-              className='flex items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-200 transform hover:scale-105'
+              className='flex items-center text-muted-foreground hover:text-foreground transition-all duration-200 transform hover:scale-105'
             >
               <svg
                 className='h-5 w-5 mr-2'
