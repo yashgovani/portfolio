@@ -46,7 +46,7 @@ const Experience = () => {
             </motion.h1>
 
             <motion.p
-              className='text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed'
+              className='text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed'
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -198,7 +198,7 @@ const Experience = () => {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -5 }}
               >
-                <h3 className='text-xl font-bold text-foreground mb-6'>
+                <h3 className='text-xl font-bold text-gray-900 mb-6'>
                   {skillGroup.category}
                 </h3>
                 <div className='flex flex-wrap gap-3'>
@@ -249,6 +249,6 @@ const Experience = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Experience;

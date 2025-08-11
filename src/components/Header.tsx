@@ -35,8 +35,8 @@ export default function Header() {
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'backdrop-blur-md bg-background/80 shadow-lg border-b border-border/20'
-          : 'bg-transparent'
+          ? 'bg-white dark:bg-gray-900 shadow-lg border-b border-gray-200 dark:border-gray-700'
+          : 'bg-white/95 dark:bg-gray-900/95'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -48,7 +48,7 @@ export default function Header() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               href='/'
-              className='flex items-center space-x-2 text-foreground'
+              className='flex items-center space-x-2 text-gray-900 dark:text-white'
             >
               <div className='relative'>
                 <motion.div
@@ -79,14 +79,14 @@ export default function Header() {
                   href={item.href}
                   className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                     isActive(item.href)
-                      ? 'text-primary'
-                      : 'text-muted-foreground hover:text-primary'
+                      ? 'text-blue-600 dark:text-blue-400'
+                      : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
                   }`}
                 >
                   {item.label}
                   {isActive(item.href) && (
                     <motion.div
-                      className='absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full'
+                      className='absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400 rounded-full'
                       layoutId='activeTab'
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -100,7 +100,7 @@ export default function Header() {
             {/* Theme Toggle */}
             <motion.button
               onClick={toggleTheme}
-              className='p-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-accent transition-colors ml-4'
+              className='p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors ml-4'
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -126,7 +126,7 @@ export default function Header() {
           <div className='md:hidden flex items-center space-x-2'>
             <motion.button
               onClick={toggleTheme}
-              className='p-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-accent transition-colors'
+              className='p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors'
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -149,7 +149,7 @@ export default function Header() {
 
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className='p-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-accent transition-colors'
+              className='p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors'
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -180,7 +180,7 @@ export default function Header() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className='md:hidden bg-background/90 backdrop-blur-md border-t border-border/20'
+              className='md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700'
             >
               <div className='px-2 pt-2 pb-3 space-y-1'>
                 {navItems.map((item, index) => (
@@ -194,8 +194,8 @@ export default function Header() {
                       href={item.href}
                       className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                         isActive(item.href)
-                          ? 'text-primary bg-secondary'
-                          : 'text-muted-foreground hover:text-primary hover:bg-secondary'
+                          ? 'text-blue-600 dark:text-blue-400 bg-gray-100 dark:bg-gray-800'
+                          : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >

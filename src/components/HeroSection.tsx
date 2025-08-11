@@ -128,7 +128,7 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <p className='text-lg mb-12 max-w-3xl mx-auto text-muted-foreground leading-relaxed'>
+            <p className='text-lg mb-12 max-w-3xl mx-auto text-gray-700 dark:text-gray-300 leading-relaxed'>
               Crafting beautiful, interactive, and user-friendly web experiences
               with modern technologies. Passionate about clean code, innovative
               design, and creating digital solutions that make a difference.
