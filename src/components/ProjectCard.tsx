@@ -28,7 +28,7 @@ export default function ProjectCard({
           className='h-48 w-full object-cover'
         />
       ) : (
-        <div className='h-48 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center'>
+        <div className='h-48 bg-linear-to-r from-blue-500 to-purple-600 flex items-center justify-center'>
           <span className='text-primary-foreground text-lg font-semibold'>
             {title}
           </span>
@@ -40,9 +40,7 @@ export default function ProjectCard({
           {title}
         </h3>
 
-        <p className='text-muted-foreground mb-4 line-clamp-3'>
-          {description}
-        </p>
+        <p className='text-muted-foreground mb-4 line-clamp-3'>{description}</p>
 
         <div className='flex flex-wrap gap-2 mb-4'>
           {technologies.map((tech, index) => (

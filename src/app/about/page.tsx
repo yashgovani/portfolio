@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div className='min-h-screen bg-background pt-16'>
       {/* Hero Section */}
-      <section className='py-20 bg-gradient-to-br from-background via-blue-50 to-indigo-100 dark:from-background dark:via-blue-900 dark:to-indigo-900'>
+      <section className='py-20 bg-linear-to-br from-background via-blue-50 to-indigo-100 dark:from-background dark:via-blue-900 dark:to-indigo-900'>
         <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -23,10 +23,12 @@ const About = () => {
               className='inline-block mb-8'
             >
               <div className='relative'>
-                <div className='w-32 h-32 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl'>
-                  <span className='text-4xl font-bold text-primary-foreground'>👨‍💻</span>
+                <div className='w-32 h-32 mx-auto bg-linear-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl'>
+                  <span className='text-4xl font-bold text-primary-foreground'>
+                    👨‍💻
+                  </span>
                 </div>
-                <div className='absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full blur-xl opacity-50 animate-pulse'></div>
+                <div className='absolute inset-0 bg-linear-to-br from-blue-500 to-purple-600 rounded-full blur-xl opacity-50 animate-pulse'></div>
               </div>
             </motion.div>
 
@@ -37,7 +39,7 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               About{' '}
-              <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
+              <span className='bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
                 Me
               </span>
             </motion.h1>
@@ -48,9 +50,9 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              I&apos;m a passionate frontend developer who loves crafting
-              beautiful, interactive, and user-friendly web experiences. With 4+
-              years of experience, I specialize in React, Next.js, and modern
+              I&apos;m a passionate Full Stack Web Developer with 4+ years of
+              professional experience building modern, scalable web
+              applications. I specialize in React, Next.js, .NET 8, and modern
               web technologies.
             </motion.p>
           </motion.div>
@@ -92,7 +94,7 @@ const About = () => {
               My Journey
             </h2>
             <p className='text-xl text-muted-foreground max-w-2xl mx-auto'>
-              From curious beginner to passionate frontend developer
+              From curious beginner to professional full stack developer
             </p>
           </motion.div>
 
@@ -104,25 +106,24 @@ const About = () => {
               viewport={{ once: true }}
             >
               <h3 className='text-2xl font-bold text-foreground mb-6'>
-                Hello, I&apos;m a Frontend Developer!
+                Hello, I&apos;m a Full Stack Web Developer!
               </h3>
               <div className='space-y-4 text-muted-foreground'>
                 <p>
                   My passion for web development started 4 years ago when I
                   built my first website. What began as curiosity quickly became
-                  an obsession with creating beautiful, functional user
-                  interfaces.
+                  a professional career building enterprise-grade web
+                  applications.
                 </p>
                 <p>
-                  I specialize in React ecosystem and modern JavaScript, with a
-                  strong focus on performance, accessibility, and user
-                  experience. I love turning complex problems into simple,
-                  elegant solutions.
+                  I specialize in React, Next.js, and .NET 8, with a strong
+                  focus on performance, scalability, and user experience. I love
+                  turning complex problems into simple, elegant solutions.
                 </p>
                 <p>
-                  When I&apos;m not coding, you&apos;ll find me exploring new
-                  design trends, contributing to open-source projects, or
-                  sharing knowledge with the developer community.
+                  Currently working as a Senior Software Engineer at Mirafra
+                  Technologies, I lead full-stack development initiatives and
+                  mentor junior developers across the team.
                 </p>
               </div>
             </motion.div>
@@ -144,7 +145,7 @@ const About = () => {
                   className='flex items-start space-x-4'
                 >
                   <div
-                    className={`w-12 h-12 rounded-full bg-gradient-to-r ${item.color} flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}
+                    className={`w-12 h-12 rounded-full bg-linear-to-r ${item.color} flex items-center justify-center text-white font-bold text-sm shrink-0`}
                   >
                     {item.year}
                   </div>
@@ -192,7 +193,7 @@ const About = () => {
                 className='bg-card p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow'
               >
                 <div
-                  className={`w-16 h-16 bg-gradient-to-r ${skillGroup.gradient} rounded-xl flex items-center justify-center mb-6`}
+                  className={`w-16 h-16 bg-linear-to-r ${skillGroup.gradient} rounded-xl flex items-center justify-center mb-6`}
                 >
                   <skillGroup.icon className='w-8 h-8 text-white' />
                 </div>
@@ -214,7 +215,7 @@ const About = () => {
                       </div>
                       <div className='w-full bg-secondary rounded-full h-2'>
                         <motion.div
-                          className={`bg-gradient-to-r ${skillGroup.gradient} h-2 rounded-full`}
+                          className={`bg-linear-to-r ${skillGroup.gradient} h-2 rounded-full`}
                           initial={{ width: 0 }}
                           whileInView={{ width: `${tech.level}%` }}
                           transition={{ duration: 1, delay: 0.2 }}
@@ -258,15 +259,13 @@ const About = () => {
                 viewport={{ once: true }}
                 className='text-center'
               >
-                <div className='w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6'>
+                <div className='w-16 h-16 bg-linear-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-6'>
                   <value.icon className='w-8 h-8 text-white' />
                 </div>
                 <h3 className='text-xl font-bold text-foreground mb-4'>
                   {value.title}
                 </h3>
-                <p className='text-muted-foreground'>
-                  {value.description}
-                </p>
+                <p className='text-muted-foreground'>{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -274,7 +273,7 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className='py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800'>
+      <section className='py-20 bg-linear-to-br from-blue-600 via-purple-600 to-blue-800'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

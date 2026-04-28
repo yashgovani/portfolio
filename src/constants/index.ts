@@ -145,10 +145,10 @@ const projects = [
 ];
 
 const stats = [
-  { label: 'Years Experience', value: '4+', icon: Code },
-  { label: 'Projects Completed', value: '50+', icon: Zap },
-  { label: 'Happy Clients', value: '30+', icon: Heart },
-  { label: 'Technologies', value: '15+', icon: Brain },
+  { label: 'Years Experience', value: '4.5+', icon: Code },
+  { label: 'Projects Completed', value: '5+', icon: Zap },
+  { label: 'Projects Delivered', value: '5+', icon: Heart },
+  { label: 'Technologies', value: '10+', icon: Brain },
 ];
 
 const skill = [

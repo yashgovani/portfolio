@@ -52,16 +52,16 @@ export default function Header() {
             >
               <div className='relative'>
                 <motion.div
-                  className='w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center'
+                  className='w-10 h-10 bg-linear-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center'
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
                 >
                   <Code2 className='w-6 h-6 text-primary-foreground' />
                 </motion.div>
-                <div className='absolute -inset-1 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg blur opacity-30 -z-10'></div>
+                <div className='absolute -inset-1 bg-linear-to-br from-blue-500 to-purple-600 rounded-lg blur opacity-30 -z-10'></div>
               </div>
-              <span className='text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
-                Frontend Dev
+              <span className='text-xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
+                Yash Govani
               </span>
             </Link>
           </motion.div>

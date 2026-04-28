@@ -16,9 +16,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Frontend Developer - Modern Web Solutions',
+  title: 'Yash Govani - Full Stack Web Developer',
   description:
-    'Creative frontend developer specializing in React, Next.js, and modern web technologies. Building beautiful, interactive user experiences with cutting-edge design.',
+    'Full Stack Web Developer specializing in React, Next.js, .NET 8, and modern web technologies. Building scalable, high-performance web applications.',
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning className="h-full">
+    <html lang='en' suppressHydrationWarning className='h-full'>
       <head>
         <script
           dangerouslySetInnerHTML={{

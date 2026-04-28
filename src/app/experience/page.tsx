@@ -14,7 +14,7 @@ const Experience = () => {
   return (
     <div className='min-h-screen bg-background pt-16'>
       {/* Hero Section */}
-      <section className='py-20 bg-gradient-to-br from-background via-blue-50 to-indigo-100 dark:from-background dark:via-blue-900 dark:to-indigo-900'>
+      <section className='py-20 bg-linear-to-br from-background via-blue-50 to-indigo-100 dark:from-background dark:via-blue-900 dark:to-indigo-900'>
         <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ const Experience = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className='inline-block mb-8'
             >
-              <div className='w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl'>
+              <div className='w-20 h-20 mx-auto bg-linear-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl'>
                 <Briefcase className='w-10 h-10 text-primary-foreground' />
               </div>
             </motion.div>
@@ -40,7 +40,7 @@ const Experience = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               Professional{' '}
-              <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
+              <span className='bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
                 Experience
               </span>
             </motion.h1>
@@ -51,10 +51,10 @@ const Experience = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Over 5 years of experience building modern web applications with
-              cutting-edge technologies. Passionate about creating scalable
-              solutions that deliver exceptional user experiences and drive
-              business success.
+              Over 4 years of professional experience building modern web
+              applications across multiple companies. Passionate about creating
+              scalable solutions that deliver exceptional user experiences and
+              drive business success.
             </motion.p>
           </motion.div>
         </div>
@@ -80,7 +80,7 @@ const Experience = () => {
 
           <div className='relative'>
             {/* Timeline line */}
-            <div className='absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 hidden md:block'></div>
+            <div className='absolute left-8 top-0 bottom-0 w-0.5 bg-linear-to-b from-blue-500 via-purple-500 to-pink-500 hidden md:block'></div>
 
             <div className='space-y-12'>
               {experiences.map((exp, index) => (
@@ -95,7 +95,7 @@ const Experience = () => {
                   <div className='flex items-start space-x-6 md:space-x-8'>
                     {/* Timeline dot */}
                     <motion.div
-                      className={`flex-shrink-0 w-16 h-16 bg-gradient-to-r ${exp.color} rounded-full flex items-center justify-center shadow-lg relative z-10`}
+                      className={`shrink-0 w-16 h-16 bg-linear-to-r ${exp.color} rounded-full flex items-center justify-center shadow-lg relative z-10`}
                       whileHover={{ scale: 1.1 }}
                       transition={{
                         type: 'spring',
@@ -122,7 +122,7 @@ const Experience = () => {
                             {exp.title}
                           </h3>
                           <p
-                            className={`text-lg font-semibold bg-gradient-to-r ${exp.color} bg-clip-text text-transparent mb-2`}
+                            className={`text-lg font-semibold bg-linear-to-r ${exp.color} bg-clip-text text-transparent mb-2`}
                           >
                             {exp.company}
                           </p>
@@ -154,7 +154,7 @@ const Experience = () => {
                               transition={{ duration: 0.5, delay: 0.1 * idx }}
                               viewport={{ once: true }}
                             >
-                              <CheckCircle className='flex-shrink-0 w-5 h-5 text-green-500 mt-0.5 mr-3' />
+                              <CheckCircle className='shrink-0 w-5 h-5 text-green-500 mt-0.5 mr-3' />
                               <span className='text-muted-foreground'>
                                 {achievement}
                               </span>
@@ -191,7 +191,7 @@ const Experience = () => {
             {skills.map((skillGroup, index) => (
               <motion.div
                 key={index}
-                className={`bg-gradient-to-br ${skillGroup.color} rounded-2xl shadow-lg hover:shadow-xl p-8 border ${skillGroup.border} transition-all duration-300`}
+                className={`bg-linear-to-br ${skillGroup.color} rounded-2xl shadow-lg hover:shadow-xl p-8 border ${skillGroup.border} transition-all duration-300`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -224,7 +224,7 @@ const Experience = () => {
 
         {/* Download Resume */}
         <motion.div
-          className='text-center bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white rounded-2xl p-12 shadow-2xl'
+          className='text-center bg-linear-to-br from-blue-600 via-purple-600 to-blue-800 text-white rounded-2xl p-12 shadow-2xl'
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -236,8 +236,8 @@ const Experience = () => {
             experience, education, and technical accomplishments.
           </p>
           <motion.a
-            href='../assets/YashGovaniResume.pdf'
-            download
+            href='/YashGovaniResume.pdf'
+            download='YashGovaniResume.pdf'
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             className='inline-flex items-center px-8 py-4 bg-white text-blue-600 rounded-xl hover:bg-gray-100 transition-all duration-300 font-bold text-lg shadow-lg'

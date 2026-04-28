@@ -8,7 +8,7 @@ import {
   Mail,
   MapPin,
   MessageCircle,
-  Send
+  Send,
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -19,12 +19,35 @@ export default function Contact() {
     subject: '',
     message: '',
   });
+  const [status, setStatus] = useState<
+    'idle' | 'loading' | 'success' | 'error'
+  >('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You can integrate with email services like EmailJS, Formspree, etc.
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        const data = await res.json();
+        setErrorMessage(data.error || 'Something went wrong.');
+        setStatus('error');
+      }
+    } catch {
+      setErrorMessage('Network error. Please try again.');
+      setStatus('error');
+    }
   };
 
   const handleChange = (
@@ -39,7 +62,7 @@ export default function Contact() {
   return (
     <div className='min-h-screen bg-background pt-16'>
       {/* Hero Section */}
-      <section className='py-20 bg-gradient-to-br from-background via-blue-50 to-indigo-100 dark:from-background dark:via-blue-900 dark:to-indigo-900'>
+      <section className='py-20 bg-linear-to-br from-background via-blue-50 to-indigo-100 dark:from-background dark:via-blue-900 dark:to-indigo-900'>
         <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -53,7 +76,7 @@ export default function Contact() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className='inline-block mb-8'
             >
-              <div className='w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl'>
+              <div className='w-20 h-20 mx-auto bg-linear-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl'>
                 <MessageCircle className='w-10 h-10 text-primary-foreground' />
               </div>
             </motion.div>
@@ -65,7 +88,7 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               Let&apos;s Build Something{' '}
-              <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
+              <span className='bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
                 Amazing
               </span>
             </motion.h1>
@@ -103,13 +126,11 @@ export default function Contact() {
                 whileHover={{ y: -5 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 25 }}
               >
-                <div className='flex-shrink-0 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center'>
+                <div className='shrink-0 w-12 h-12 bg-linear-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center'>
                   <Mail className='h-6 w-6 text-primary-foreground' />
                 </div>
                 <div>
-                  <h3 className='font-bold text-foreground text-lg'>
-                    Email
-                  </h3>
+                  <h3 className='font-bold text-foreground text-lg'>Email</h3>
                   <p className='text-muted-foreground'>
                     yash.govani1310@gmail.com
                   </p>
@@ -124,16 +145,14 @@ export default function Contact() {
                 whileHover={{ y: -5 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 25 }}
               >
-                <div className='flex-shrink-0 w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center'>
+                <div className='shrink-0 w-12 h-12 bg-linear-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center'>
                   <MapPin className='h-6 w-6 text-primary-foreground' />
                 </div>
                 <div>
                   <h3 className='font-bold text-foreground text-lg'>
                     Location
                   </h3>
-                  <p className='text-muted-foreground'>
-                    Ahmedabad, India
-                  </p>
+                  <p className='text-muted-foreground'>Ahmedabad, India</p>
                   <p className='text-sm text-muted-foreground mt-1'>
                     Available for remote / in-office work worldwide
                   </p>
@@ -143,7 +162,7 @@ export default function Contact() {
 
             {/* Social Links */}
             <motion.div
-              className='bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-8 rounded-2xl border border-blue-100 dark:border-blue-800'
+              className='bg-linear-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-8 rounded-2xl border border-blue-100 dark:border-blue-800'
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
@@ -153,10 +172,10 @@ export default function Contact() {
               </h3>
               <div className='flex space-x-4'>
                 <motion.a
-                  href='https://linkedin.com/in/yourprofile'
+                  href='https://linkedin.com/in/yashgovani'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='flex items-center justify-center w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg'
+                  className='flex items-center justify-center w-12 h-12 bg-linear-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg'
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -166,7 +185,7 @@ export default function Contact() {
                   href='https://github.com/yashgovani'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='flex items-center justify-center w-12 h-12 bg-gradient-to-r from-secondary to-secondary/80 text-secondary-foreground rounded-xl hover:from-secondary/80 hover:to-secondary/60 transition-all duration-300 shadow-lg'
+                  className='flex items-center justify-center w-12 h-12 bg-linear-to-r from-secondary to-secondary/80 text-secondary-foreground rounded-xl hover:from-secondary/80 hover:to-secondary/60 transition-all duration-300 shadow-lg'
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -266,13 +285,25 @@ export default function Contact() {
 
               <motion.button
                 type='submit'
+                disabled={status === 'loading'}
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className='w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-4 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-bold text-lg shadow-lg flex items-center justify-center'
+                className='w-full bg-linear-to-r from-blue-600 to-purple-600 text-white px-6 py-4 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-bold text-lg shadow-lg flex items-center justify-center disabled:opacity-60 disabled:cursor-not-allowed'
               >
-                Send Message
+                {status === 'loading' ? 'Sending...' : 'Send Message'}
                 <Send className='inline-block ml-2 h-5 w-5' />
               </motion.button>
+
+              {status === 'success' && (
+                <p className='text-green-600 dark:text-green-400 text-center font-medium'>
+                  Message sent successfully! I&apos;ll get back to you soon.
+                </p>
+              )}
+              {status === 'error' && (
+                <p className='text-red-600 dark:text-red-400 text-center font-medium'>
+                  {errorMessage}
+                </p>
+              )}
             </form>
           </motion.div>
         </div>
@@ -327,7 +358,7 @@ export default function Contact() {
                 whileHover={{ scale: 1.05, y: -5 }}
               >
                 <div
-                  className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-4 text-2xl shadow-lg`}
+                  className={`w-16 h-16 bg-linear-to-r ${service.color} rounded-2xl flex items-center justify-center mb-4 text-2xl shadow-lg`}
                 >
                   {service.icon}
                 </div>
@@ -344,7 +375,7 @@ export default function Contact() {
 
         {/* CTA Section */}
         <motion.div
-          className='mt-20 text-center bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white rounded-2xl p-12 shadow-2xl'
+          className='mt-20 text-center bg-linear-to-br from-blue-600 via-purple-600 to-blue-800 text-white rounded-2xl p-12 shadow-2xl'
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -368,8 +399,8 @@ export default function Contact() {
               Email Me Directly
             </motion.a>
             <motion.a
-              href='/resume.pdf'
-              download
+              href='/YashGovaniResume.pdf'
+              download='YashGovaniResume.pdf'
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className='inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-xl hover:bg-white hover:text-blue-600 transition-all duration-300 font-bold text-lg'

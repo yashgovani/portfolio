@@ -77,9 +77,9 @@ export default function Home() {
                 className='group'
               >
                 <div className='relative bg-background p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-border overflow-hidden'>
-                  <div className='absolute inset-0 bg-gradient-to-br opacity-5 group-hover:opacity-10 transition-opacity duration-300'></div>
+                  <div className='absolute inset-0 bg-linear-to-br opacity-5 group-hover:opacity-10 transition-opacity duration-300'></div>
                   <div
-                    className={`w-16 h-16 bg-gradient-to-br ${skill.gradient} rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl transition-shadow duration-300`}
+                    className={`w-16 h-16 bg-linear-to-br ${skill.gradient} rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl transition-shadow duration-300`}
                   >
                     <skill.icon className='w-8 h-8 text-primary-foreground' />
                   </div>
@@ -138,7 +138,7 @@ export default function Home() {
           >
             <Link
               href='/projects'
-              className='group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-300 rounded-xl font-semibold shadow-lg hover:shadow-xl'
+              className='group inline-flex items-center px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-300 rounded-xl font-semibold shadow-lg hover:shadow-xl'
             >
               <span>View All Projects</span>
               <motion.svg
@@ -161,7 +161,7 @@ export default function Home() {
 
       {/* Call to Action Section */}
       <section className='relative py-20 overflow-hidden'>
-        <div className='absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800'></div>
+        <div className='absolute inset-0 bg-linear-to-br from-blue-600 via-purple-600 to-blue-800'></div>
         <div className='absolute inset-0 bg-black/20'></div>
         <motion.div
           className='absolute inset-0'

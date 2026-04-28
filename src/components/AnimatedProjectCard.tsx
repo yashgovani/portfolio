@@ -38,7 +38,7 @@ export default function AnimatedProjectCard({
       <div className='relative overflow-hidden'>
         {imageUrl ? (
           <div className='h-48 w-full bg-secondary relative overflow-hidden'>
-            <div className='absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20 group-hover:from-blue-500/30 group-hover:to-purple-600/30 transition-all duration-300' />
+            <div className='absolute inset-0 bg-linear-to-br from-blue-500/20 to-purple-600/20 group-hover:from-blue-500/30 group-hover:to-purple-600/30 transition-all duration-300' />
             <div className='absolute inset-0 flex items-center justify-center'>
               <span className='text-muted-foreground text-sm'>
                 Project Image
@@ -47,7 +47,7 @@ export default function AnimatedProjectCard({
           </div>
         ) : (
           <motion.div
-            className='h-48 bg-gradient-to-br from-blue-500 via-purple-600 to-cyan-500 flex items-center justify-center relative overflow-hidden'
+            className='h-48 bg-linear-to-br from-blue-500 via-purple-600 to-cyan-500 flex items-center justify-center relative overflow-hidden'
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
@@ -179,7 +179,7 @@ export default function AnimatedProjectCard({
               href={liveUrl}
               target='_blank'
               rel='noopener noreferrer'
-              className='flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 px-4 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-purple-700 transition-all flex items-center justify-center space-x-2'
+              className='flex-1 bg-linear-to-r from-blue-600 to-purple-600 text-white py-2 px-4 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-purple-700 transition-all flex items-center justify-center space-x-2'
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

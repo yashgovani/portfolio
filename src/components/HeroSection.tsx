@@ -30,14 +30,14 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className='relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-blue-50 to-indigo-100 dark:from-background dark:via-blue-900 dark:to-indigo-900'>
+    <section className='relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-background via-blue-50 to-indigo-100 dark:from-background dark:via-blue-900 dark:to-indigo-900'>
       {/* Particle Background */}
       <ParticleBackground />
 
       {/* Animated background elements */}
       <div className='absolute inset-0 overflow-hidden'>
         <motion.div
-          className='absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400 to-purple-500 opacity-20 rounded-full blur-3xl'
+          className='absolute -top-40 -right-40 w-80 h-80 bg-linear-to-br from-blue-400 to-purple-500 opacity-20 rounded-full blur-3xl'
           animate={{
             scale: [1, 1.2, 1],
             rotate: [0, 180, 360],
@@ -49,7 +49,7 @@ export default function HeroSection() {
           }}
         />
         <motion.div
-          className='absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-cyan-400 to-blue-500 opacity-15 rounded-full blur-3xl'
+          className='absolute -bottom-40 -left-40 w-96 h-96 bg-linear-to-br from-cyan-400 to-blue-500 opacity-15 rounded-full blur-3xl'
           animate={{
             scale: [1.2, 1, 1.2],
             rotate: [360, 180, 0],
@@ -61,7 +61,7 @@ export default function HeroSection() {
           }}
         />
         <motion.div
-          className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-purple-400 to-pink-400 opacity-10 rounded-full blur-3xl'
+          className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-linear-to-br from-purple-400 to-pink-400 opacity-10 rounded-full blur-3xl'
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.1, 0.2, 0.1],
@@ -89,10 +89,12 @@ export default function HeroSection() {
               className='inline-block'
             >
               <div className='relative'>
-                <div className='w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl'>
-                  <span className='text-3xl font-bold text-primary-foreground'>👨‍💻</span>
+                <div className='w-24 h-24 mx-auto mb-6 bg-linear-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl'>
+                  <span className='text-3xl font-bold text-primary-foreground'>
+                    👨‍💻
+                  </span>
                 </div>
-                <div className='absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full blur-xl opacity-50 animate-pulse'></div>
+                <div className='absolute inset-0 bg-linear-to-br from-blue-500 to-purple-600 rounded-full blur-xl opacity-50 animate-pulse'></div>
               </div>
             </motion.div>
           </motion.div>
@@ -100,7 +102,7 @@ export default function HeroSection() {
           <motion.div variants={itemVariants}>
             <h1 className='text-5xl md:text-7xl font-bold mb-6 text-foreground'>
               Hi, I&apos;m{' '}
-              <span className='bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent'>
+              <span className='bg-linear-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent'>
                 Yash Govani
               </span>
               <br />
@@ -115,7 +117,7 @@ export default function HeroSection() {
                 ]}
                 wrapper='span'
                 speed={50}
-                className='bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent'
+                className='bg-linear-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent'
                 repeat={Infinity}
               />
             </h1>
@@ -129,9 +131,10 @@ export default function HeroSection() {
 
           <motion.div variants={itemVariants}>
             <p className='text-lg mb-12 max-w-3xl mx-auto text-gray-700 dark:text-gray-300 leading-relaxed'>
-              Crafting beautiful, interactive, and user-friendly web experiences
-              with modern technologies. Passionate about clean code, innovative
-              design, and creating digital solutions that make a difference.
+              Full Stack Web Developer with 4+ years of professional experience
+              building scalable web applications. Passionate about clean code,
+              modern architecture, and creating digital solutions that make a
+              difference.
             </p>
           </motion.div>
 
@@ -145,7 +148,7 @@ export default function HeroSection() {
             >
               <Link
                 href='/projects'
-                className='group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl'
+                className='group relative px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold transition-all duration-300 inline-flex items-center space-x-2 shadow-lg hover:shadow-xl'
               >
                 <span>View My Work</span>
                 <motion.div className='group-hover:translate-x-1 transition-transform'>

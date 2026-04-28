@@ -10,7 +10,7 @@ const Projects = () => {
   return (
     <div className='min-h-screen bg-background pt-16'>
       {/* Hero Section */}
-      <section className='py-20 bg-gradient-to-br from-background via-blue-50 to-indigo-100 dark:from-background dark:via-blue-900 dark:to-indigo-900'>
+      <section className='py-20 bg-linear-to-br from-background via-blue-50 to-indigo-100 dark:from-background dark:via-blue-900 dark:to-indigo-900'>
         <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -23,7 +23,7 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className='inline-block mb-8'
             >
-              <div className='w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl'>
+              <div className='w-20 h-20 mx-auto bg-linear-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl'>
                 <Code className='w-10 h-10 text-primary-foreground' />
               </div>
             </motion.div>
@@ -35,7 +35,7 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               My{' '}
-              <span className='bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
+              <span className='bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
                 Projects
               </span>
             </motion.h1>
@@ -70,7 +70,7 @@ const Projects = () => {
 
         {/* Call to Action */}
         <motion.div
-          className='text-center bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 text-white py-16 px-8 rounded-2xl shadow-2xl'
+          className='text-center bg-linear-to-br from-blue-600 via-purple-600 to-blue-800 text-white py-16 px-8 rounded-2xl shadow-2xl'
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
